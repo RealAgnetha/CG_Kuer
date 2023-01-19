@@ -11,7 +11,7 @@ public class ObjSpawner : MonoBehaviour
     void Start()
     {
         spawnPosition = new Vector2(0f, 6);
-        InvokeRepeating("SpawnObj", 0f, spawnInterval);
+        InvokeRepeating("SpawnObj", 2f, spawnInterval);
     }
 
     void SpawnObj()
