@@ -6,15 +6,18 @@ public class ObjSpawner : MonoBehaviour
     public float spawnInterval = 2f;
 
     private Vector2 spawnPosition;
+    private int count = 0;
+
     void Start()
     {
-        spawnPosition = new Vector2(0f, Screen.height);
+        spawnPosition = new Vector2(0f, 6);
         InvokeRepeating("SpawnObj", 0f, spawnInterval);
     }
 
     void SpawnObj()
     {
-        Instantiate(objPrefab, spawnPosition, Quaternion.identity);
+        GameObject instance = Instantiate(objPrefab, spawnPosition, Quaternion.identity);
+        instance.name = "Object " + count;
+        count++;
     }
-
 }
