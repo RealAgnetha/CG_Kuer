@@ -37,8 +37,10 @@ public class ObjSpawner : MonoBehaviour
             {
                 if(allObjects[i].GetComponent<Collider2D>().bounds.Contains(allObjects[j].transform.position) || allObjects[j].GetComponent<Collider2D>().bounds.Contains(allObjects[i].transform.position))
                 {
-                    Debug.Log("overlap");
+                    Destroy(allObjects[i]);
+                    Destroy(allObjects[j]);
                 }
+
             }
         }
     }
