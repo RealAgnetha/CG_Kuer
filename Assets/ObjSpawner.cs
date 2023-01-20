@@ -4,6 +4,7 @@ public class ObjSpawner : MonoBehaviour
 {
     public GameObject objPrefab;
     public GameObject newObjPrefab; // new object prefab to spawn when two objects overlap
+  
     public float spawnInterval = 2f;
     public float overlapCheckInterval = 0.5f; // interval to check for overlapping objects
     public float overlapThreshold = 0.5f; // minimum overlap percentage for objects to be replaced
@@ -37,6 +38,10 @@ public class ObjSpawner : MonoBehaviour
             {
                 if(allObjects[i].GetComponent<Collider2D>().bounds.Contains(allObjects[j].transform.position) || allObjects[j].GetComponent<Collider2D>().bounds.Contains(allObjects[i].transform.position))
                 {
+                    Vector2 spawnPos = new Vector2((allObjects[i].transform.position.x + allObjects[j].transform.position.x) / 2, (allObjects[i].transform.position.y + allObjects[j].transform.position.y) / 2);
+                    GameObject newInstance = Instantiate(newObjPrefab, spawnPos, Quaternion.identity);
+                    newInstance.name = "New Object " + count;
+                    count++;
                     Destroy(allObjects[i]);
                     Destroy(allObjects[j]);
                 }
