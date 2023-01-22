@@ -27,7 +27,7 @@ public class ObjSpawner : MonoBehaviour
 
     void Update()
     {
-        statusText.text = "Count: " + mergeCount;
+        statusText.text = "Count: " + mergeCount*10;
     }
 
     void SpawnObj()
