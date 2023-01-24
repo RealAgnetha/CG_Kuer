@@ -12,7 +12,7 @@ public class ObjSpawner : MonoBehaviour
 
     private Vector2 spawnPosition;
     private int count = 0;
-    private int mergeCount = 0;
+    public int mergeCount = 0;
 
     void Start()
     {
@@ -25,7 +25,7 @@ public class ObjSpawner : MonoBehaviour
 
     void Update()
     {
-        statusText.text = "Count: " + mergeCount * 10;
+        statusText.text = "Count: " + mergeCount;
     }
 
     void SpawnObj()
@@ -65,9 +65,12 @@ public class ObjSpawner : MonoBehaviour
                     count++;
                     Destroy(allObjects[i]);
                     Destroy(allObjects[j]);
-                    mergeCount++;
+
+                    // update mergeCount based on the level of the merged objects
+                    mergeCount += ((int)Mathf.Pow(10, firstObjectLevel)) *10;
                 }
             }
         }
     }
+
 }
