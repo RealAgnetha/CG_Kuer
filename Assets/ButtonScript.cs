@@ -22,7 +22,7 @@ public class ButtonScript : MonoBehaviour
 
     public void OnSellButtonClick()
     {
-        objSpawner.spawnInterval -= 0.5f;
+        objSpawner.spawnInterval -= 2f;
         button.interactable = false;
     }
 

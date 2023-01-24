@@ -6,9 +6,8 @@ public class ObjSpawner : MonoBehaviour
     public GameObject objPrefab;
     public TextMeshProUGUI statusText;
 
-    public float spawnInterval = 2f;
+    public float spawnInterval = 5f;
     public float overlapCheckInterval = 0.5f; // interval to check for overlapping objects
-    public float overlapThreshold = 0.5f; // minimum overlap percentage for objects to be replaced
 
     private Vector2 spawnPosition;
     private int count = 0;

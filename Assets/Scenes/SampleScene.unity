@@ -538,9 +538,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objPrefab: {fileID: 4722775398941855901, guid: 3a127b4d0bf374746b95780dcc37b105, type: 3}
   statusText: {fileID: 1420488655}
-  spawnInterval: 2
+  spawnInterval: 5
   overlapCheckInterval: 0.5
-  overlapThreshold: 0.5
+  mergeCount: 0
 --- !u!4 &1206328735
 Transform:
   m_ObjectHideFlags: 0
@@ -567,6 +567,7 @@ GameObject:
   - component: {fileID: 1207476956}
   - component: {fileID: 1207476955}
   - component: {fileID: 1207476954}
+  - component: {fileID: 1207476957}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -637,7 +638,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1207476955}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1207476957}
+        m_TargetAssemblyTypeName: ButtonScript, Assembly-CSharp
+        m_MethodName: OnSellButtonClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1207476955
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -676,6 +689,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1207476952}
   m_CullTransparentMesh: 1
+--- !u!114 &1207476957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1207476952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a990b6b4a6ba3b469537d5c615427bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 1207476954}
+  objSpawner: {fileID: 1206328734}
 --- !u!1 &1420488653
 GameObject:
   m_ObjectHideFlags: 0
