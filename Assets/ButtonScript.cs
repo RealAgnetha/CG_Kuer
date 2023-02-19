@@ -5,6 +5,13 @@ public class ButtonScript : MonoBehaviour
 {
     public Button button;
     public ObjSpawner objSpawner;
+    public GameObject popupMenu;
+    private Image bgImage;
+
+    private void Start()
+    {
+        bgImage = popupMenu.GetComponent<Image>();
+    }
 
     private void Update()
     {
@@ -17,13 +24,22 @@ public class ButtonScript : MonoBehaviour
         {
             button.interactable = false;
         }
+        if (Input.GetMouseButtonDown(0) && popupMenu.activeSelf && !RectTransformUtility.RectangleContainsScreenPoint(
+                popupMenu.GetComponent<RectTransform>(),
+                Input.mousePosition,
+                Camera.main))
+        {
+            popupMenu.SetActive(false);
+        }
     }
 
-
-    public void OnSellButtonClick()
+    public void OnButtonClick()
     {
-        objSpawner.spawnInterval -= 2f;
-        button.interactable = false;
+        popupMenu.SetActive(true);
     }
 
+    public void OnCloseButtonClick()
+    {
+        popupMenu.SetActive(false);
+    }
 }
