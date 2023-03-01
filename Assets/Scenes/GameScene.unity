@@ -1360,6 +1360,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objPrefab: {fileID: 4722775398941855901, guid: 3a127b4d0bf374746b95780dcc37b105, type: 3}
   statusText: {fileID: 1420488655}
+  glitterIsActive: 0
   spawnInterval: 5
   overlapCheckInterval: 0.5
   mergeCount: 0
@@ -1669,7 +1670,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 85, y: 319.8805}
+  m_AnchoredPosition: {x: 85, y: 309}
   m_SizeDelta: {x: 160, y: 28.522}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1419522188
@@ -1733,7 +1734,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1419522188}
         m_TargetAssemblyTypeName: ButtonScript, Assembly-CSharp
-        m_MethodName: OnSellButtonClick
+        m_MethodName: ActivateGlitter
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -15,7 +15,6 @@ public class ButtonScript : MonoBehaviour
 
     private void Update()
     {
-        UnityEngine.Debug.Log("Merge Count: " + objSpawner.mergeCount);
         if (objSpawner.mergeCount >= 100)
         {
             button.interactable = true;
@@ -24,13 +23,14 @@ public class ButtonScript : MonoBehaviour
         {
             button.interactable = false;
         }
-        if (Input.GetMouseButtonDown(0) && popupMenu.activeSelf && !RectTransformUtility.RectangleContainsScreenPoint(
-                popupMenu.GetComponent<RectTransform>(),
-                Input.mousePosition,
-                Camera.main))
-        {
-            popupMenu.SetActive(false);
-        }
+    }
+
+    public void ActivateGlitter()
+    {
+        Debug.Log("activate glitter");
+        objSpawner.ActivateGlitter(true);
+        popupMenu.SetActive(false);
+
     }
 
     public void OnButtonClick()
@@ -40,6 +40,7 @@ public class ButtonScript : MonoBehaviour
 
     public void OnCloseButtonClick()
     {
+        Debug.Log("Closed on close button ");
         popupMenu.SetActive(false);
     }
 }

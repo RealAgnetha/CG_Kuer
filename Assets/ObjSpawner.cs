@@ -5,6 +5,7 @@ public class ObjSpawner : MonoBehaviour
 {
     public GameObject objPrefab;
     public TextMeshProUGUI statusText;
+    public bool glitterIsActive = false;
 
     public float spawnInterval = 5f;
     public float overlapCheckInterval = 0.5f; // interval to check for overlapping objects
@@ -35,6 +36,17 @@ public class ObjSpawner : MonoBehaviour
         instance.GetComponent<Mergeable>().SetLevel(0);
         instance.name = "Object " + count;
         count++;
+        if (glitterIsActive)
+        {
+            Debug.Log("Glitter active: " + glitterIsActive);
+            instance.GetComponent<ParticleSystem>().Play();
+        }
+    }
+
+    public void ActivateGlitter(bool active)
+    {
+        Debug.Log("ActivateGlitter: " + active);
+        glitterIsActive = active;
     }
 
     void CheckOverlap()
@@ -58,18 +70,21 @@ public class ObjSpawner : MonoBehaviour
                         new Vector2((allObjects[i].transform.position.x + allObjects[j].transform.position.x) / 2,
                             (allObjects[i].transform.position.y + allObjects[j].transform.position.y) / 2);
                     GameObject newInstance = Instantiate(objPrefab, spawnPos, Quaternion.identity);
-                    newInstance.GetComponent<Mergeable>().SetLevel(firstObjectLevel+1);
-
+                    newInstance.GetComponent<Mergeable>().SetLevel(firstObjectLevel + 1);
+                    if (glitterIsActive)
+                    {
+                        Debug.Log("Glitter active: " + glitterIsActive);
+                        newInstance.GetComponent<ParticleSystem>().Play();
+                    }
                     newInstance.name = "New Object " + count;
                     count++;
                     Destroy(allObjects[i]);
                     Destroy(allObjects[j]);
 
                     // update mergeCount based on the level of the merged objects
-                    mergeCount += ((int)Mathf.Pow(10, firstObjectLevel)) *10;
+                    mergeCount += ((int)Mathf.Pow(10, firstObjectLevel)) * 10;
                 }
             }
         }
     }
-
 }
