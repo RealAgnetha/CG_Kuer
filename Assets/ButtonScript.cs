@@ -34,15 +34,14 @@ public class ButtonScript : MonoBehaviour
         Debug.Log("activate glitter");
         objSpawner.ActivateGlitter(true);
         button.interactable = false;
-    }
+        button.GetComponent<Image>().color = Color.gray;    }
 
     public void IncreaseSpeed()
     {
         Debug.Log("increase speed");
         objSpawner.IncreaseSpeed(true);
-        popupMenu.SetActive(false);
         button.interactable = false;
-
+        button.GetComponent<Image>().color = Color.gray;
     }
     
     public void OnButtonClick()

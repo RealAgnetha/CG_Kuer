@@ -44,12 +44,7 @@ public class ObjSpawner : MonoBehaviour
             instance.GetComponent<ParticleSystem>().Play();
         }
 
-        if (speedIsIncreased)
-        {
-            spawnInterval /= 2.0f;
-            CancelInvoke("SpawnObj");
-            InvokeRepeating("SpawnObj", 2f, spawnInterval);
-        }
+      
     }
 
     public void ActivateGlitter(bool active)
@@ -61,8 +56,9 @@ public class ObjSpawner : MonoBehaviour
     public void IncreaseSpeed(bool active)
     {
         Debug.Log("Speed increased: " + active);
-        speedIsIncreased = active;
-    }
+        spawnInterval /= 2.0f;
+        CancelInvoke("SpawnObj");
+        InvokeRepeating("SpawnObj", 2f, spawnInterval);    }
 
     void CheckOverlap()
     {
