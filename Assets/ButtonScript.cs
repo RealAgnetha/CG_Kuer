@@ -15,11 +15,15 @@ public class ButtonScript : MonoBehaviour
 
     private void Update()
     {
-        if (objSpawner.mergeCount >= 100)
+        if (objSpawner.mergeCount >= 100) // Change the merge count condition to 1000
         {
             button.interactable = true;
         }
         else
+        {
+            button.interactable = false;
+        }
+        if (button.name == "GlitterBtn" && objSpawner.mergeCount < 1000)
         {
             button.interactable = false;
         }
@@ -29,7 +33,7 @@ public class ButtonScript : MonoBehaviour
     {
         Debug.Log("activate glitter");
         objSpawner.ActivateGlitter(true);
-        popupMenu.SetActive(false);
+        button.interactable = false;
     }
 
     public void IncreaseSpeed()
@@ -37,15 +41,16 @@ public class ButtonScript : MonoBehaviour
         Debug.Log("increase speed");
         objSpawner.IncreaseSpeed(true);
         popupMenu.SetActive(false);
+        button.interactable = false;
+
     }
     
-
     public void OnButtonClick()
     {
         popupMenu.SetActive(true);
     }
 
-    public void OnCloseButtonClick()
+    public void ClosePopup()
     {
         Debug.Log("Closed on close button ");
         popupMenu.SetActive(false);

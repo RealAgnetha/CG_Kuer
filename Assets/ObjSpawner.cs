@@ -37,18 +37,19 @@ public class ObjSpawner : MonoBehaviour
         instance.GetComponent<Mergeable>().SetLevel(0);
         instance.name = "Object " + count;
         count++;
+        
         if (glitterIsActive)
         {
             Debug.Log("Glitter active: " + glitterIsActive);
             instance.GetComponent<ParticleSystem>().Play();
         }
+
         if (speedIsIncreased)
         {
-            spawnInterval /= 2.0f; // decrease the spawn interval by half
+            spawnInterval /= 2.0f;
             CancelInvoke("SpawnObj");
             InvokeRepeating("SpawnObj", 2f, spawnInterval);
         }
-        
     }
 
     public void ActivateGlitter(bool active)
@@ -62,7 +63,7 @@ public class ObjSpawner : MonoBehaviour
         Debug.Log("Speed increased: " + active);
         speedIsIncreased = active;
     }
-    
+
     void CheckOverlap()
     {
         GameObject[] allObjects = GameObject.FindGameObjectsWithTag("Object");
@@ -90,6 +91,7 @@ public class ObjSpawner : MonoBehaviour
                         Debug.Log("Glitter active: " + glitterIsActive);
                         newInstance.GetComponent<ParticleSystem>().Play();
                     }
+
                     newInstance.name = "New Object " + count;
                     count++;
                     Destroy(allObjects[i]);
