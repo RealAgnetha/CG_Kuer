@@ -30,8 +30,15 @@ public class ButtonScript : MonoBehaviour
         Debug.Log("activate glitter");
         objSpawner.ActivateGlitter(true);
         popupMenu.SetActive(false);
-
     }
+
+    public void IncreaseSpeed()
+    {
+        Debug.Log("increase speed");
+        objSpawner.IncreaseSpeed(true);
+        popupMenu.SetActive(false);
+    }
+    
 
     public void OnButtonClick()
     {

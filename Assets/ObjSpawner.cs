@@ -6,6 +6,7 @@ public class ObjSpawner : MonoBehaviour
     public GameObject objPrefab;
     public TextMeshProUGUI statusText;
     public bool glitterIsActive = false;
+    public bool speedIsIncreased = false;
 
     public float spawnInterval = 5f;
     public float overlapCheckInterval = 0.5f; // interval to check for overlapping objects
@@ -20,12 +21,12 @@ public class ObjSpawner : MonoBehaviour
         InvokeRepeating("CheckOverlap", overlapCheckInterval, overlapCheckInterval);
 
         Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Objects"), LayerMask.NameToLayer("Objects"));
-        statusText.text = "Count: " + mergeCount;
+        statusText.text = "Points: " + mergeCount;
     }
 
     void Update()
     {
-        statusText.text = "Count: " + mergeCount;
+        statusText.text = "Points: " + mergeCount;
     }
 
     void SpawnObj()
@@ -41,6 +42,13 @@ public class ObjSpawner : MonoBehaviour
             Debug.Log("Glitter active: " + glitterIsActive);
             instance.GetComponent<ParticleSystem>().Play();
         }
+        if (speedIsIncreased)
+        {
+            spawnInterval /= 2.0f; // decrease the spawn interval by half
+            CancelInvoke("SpawnObj");
+            InvokeRepeating("SpawnObj", 2f, spawnInterval);
+        }
+        
     }
 
     public void ActivateGlitter(bool active)
@@ -49,6 +57,12 @@ public class ObjSpawner : MonoBehaviour
         glitterIsActive = active;
     }
 
+    public void IncreaseSpeed(bool active)
+    {
+        Debug.Log("Speed increased: " + active);
+        speedIsIncreased = active;
+    }
+    
     void CheckOverlap()
     {
         GameObject[] allObjects = GameObject.FindGameObjectsWithTag("Object");

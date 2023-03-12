@@ -223,7 +223,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.00059462, y: -0.3}
+  m_AnchoredPosition: {x: -2, y: -0.3}
   m_SizeDelta: {x: 340, y: 60.375}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &336462949
@@ -357,7 +357,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -95.058815, y: -0.4968872}
+  m_AnchoredPosition: {x: -100, y: -0.4968872}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &419248114
@@ -708,7 +708,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -24.000256, y: 539.00006}
+  m_AnchoredPosition: {x: 5, y: 539.00006}
   m_SizeDelta: {x: 603.49, y: 77.381}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &558865004
@@ -1217,8 +1217,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 61, y: 283}
-  m_SizeDelta: {x: 160, y: 28.522}
+  m_AnchoredPosition: {x: 108, y: 393}
+  m_SizeDelta: {x: 109.3827, y: 28.522}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1095302539
 MonoBehaviour:
@@ -1281,7 +1281,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1095302539}
         m_TargetAssemblyTypeName: ButtonScript, Assembly-CSharp
-        m_MethodName: OnSellButtonClick
+        m_MethodName: IncreaseSpeed
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1361,6 +1361,7 @@ MonoBehaviour:
   objPrefab: {fileID: 4722775398941855901, guid: 3a127b4d0bf374746b95780dcc37b105, type: 3}
   statusText: {fileID: 1420488655}
   glitterIsActive: 0
+  speedIsIncreased: 0
   spawnInterval: 5
   overlapCheckInterval: 0.5
   mergeCount: 0
@@ -1670,8 +1671,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 60.99998, y: 391.91275}
-  m_SizeDelta: {x: 160, y: 28.522}
+  m_AnchoredPosition: {x: 105, y: 271}
+  m_SizeDelta: {x: 110.4157, y: 28.522}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1419522188
 MonoBehaviour:
@@ -1839,7 +1840,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: count
+  m_text: Points
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1950,7 +1951,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -95.058815, y: -0.4968872}
+  m_AnchoredPosition: {x: -110, y: -0.4968872}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1721086619
@@ -1973,7 +1974,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: other
+  m_text: Speed x2
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
