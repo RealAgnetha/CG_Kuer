@@ -51,6 +51,8 @@ public class ObjSpawner : MonoBehaviour
     {
         Debug.Log("ActivateGlitter: " + active);
         glitterIsActive = active;
+        mergeCount -= 1000;
+
     }
 
     public void IncreaseSpeed(bool active)
@@ -58,7 +60,9 @@ public class ObjSpawner : MonoBehaviour
         Debug.Log("Speed increased: " + active);
         spawnInterval /= 2.0f;
         CancelInvoke("SpawnObj");
-        InvokeRepeating("SpawnObj", 2f, spawnInterval);    }
+        InvokeRepeating("SpawnObj", 2f, spawnInterval);
+        mergeCount -= 100;
+    }
 
     void CheckOverlap()
     {

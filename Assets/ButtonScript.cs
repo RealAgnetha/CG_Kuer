@@ -15,7 +15,11 @@ public class ButtonScript : MonoBehaviour
 
     private void Update()
     {
-        if (objSpawner.mergeCount >= 100) // Change the merge count condition to 1000
+        if (button.name == "CloseBtn")
+        {
+                 button.interactable = true;
+        }
+        else if (objSpawner.mergeCount >= 100) // Change the merge count condition to 1000
         {
             button.interactable = true;
         }
@@ -23,10 +27,12 @@ public class ButtonScript : MonoBehaviour
         {
             button.interactable = false;
         }
+        
         if (button.name == "GlitterBtn" && objSpawner.mergeCount < 1000)
         {
             button.interactable = false;
         }
+        
     }
 
     public void ActivateGlitter()
