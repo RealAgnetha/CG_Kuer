@@ -17,7 +17,7 @@ public class ButtonScript : MonoBehaviour
     {
         if (button.name == "CloseBtn")
         {
-                 button.interactable = true;
+            button.interactable = true;
         }
         else if (objSpawner.mergeCount >= 100) // Change the merge count condition to 1000
         {
@@ -27,12 +27,10 @@ public class ButtonScript : MonoBehaviour
         {
             button.interactable = false;
         }
-        
         if (button.name == "GlitterBtn" && objSpawner.mergeCount < 1000)
         {
             button.interactable = false;
         }
-        
     }
 
     public void ActivateGlitter()
@@ -40,7 +38,8 @@ public class ButtonScript : MonoBehaviour
         Debug.Log("activate glitter");
         objSpawner.ActivateGlitter(true);
         button.interactable = false;
-        button.GetComponent<Image>().color = Color.gray;    }
+        button.GetComponent<Image>().color = Color.gray;
+    }
 
     public void IncreaseSpeed()
     {
@@ -49,7 +48,7 @@ public class ButtonScript : MonoBehaviour
         button.interactable = false;
         button.GetComponent<Image>().color = Color.gray;
     }
-    
+
     public void OnButtonClick()
     {
         popupMenu.SetActive(true);

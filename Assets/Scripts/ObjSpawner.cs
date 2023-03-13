@@ -44,7 +44,7 @@ public class ObjSpawner : MonoBehaviour
             instance.GetComponent<ParticleSystem>().Play();
         }
 
-      
+
     }
 
     public void ActivateGlitter(bool active)
