@@ -9,7 +9,7 @@ public class ButtonScript : MonoBehaviour
     public GameObject popupMenu;
     private Image bgImage;
     private bool isPaused = false;
-    
+
     private void Start()
     {
         bgImage = popupMenu.GetComponent<Image>();
@@ -17,11 +17,11 @@ public class ButtonScript : MonoBehaviour
 
     private void Update()
     {
-        if (button.name == "CloseBtn" || button.name == "HomeBtn" || button.name == "PauseBtn" || button.name == "Cart" ) 
+        if (button.name == "CloseBtn" || button.name == "HomeBtn" || button.name == "PauseBtn" || button.name == "Cart")
         {
             button.interactable = true;
         }
-        else if (objSpawner.mergeCount >= 100) 
+        else if (objSpawner.mergeCount >= 100)
         {
             button.interactable = true;
         }
@@ -29,6 +29,7 @@ public class ButtonScript : MonoBehaviour
         {
             button.interactable = false;
         }
+
         if (button.name == "GlitterBtn" && objSpawner.mergeCount < 1000)
         {
             button.interactable = false;
@@ -68,26 +69,29 @@ public class ButtonScript : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         ResumeGame();
     }
-    
+
     public void PreviousLevel()
     {
         Debug.Log("Next level started");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
         ResumeGame();
     }
-    
+
     public void PauseGame()
     {
         Time.timeScale = 0;
     }
+
     public void ResumeGame()
     {
         Time.timeScale = 1;
     }
+
     public void PausePlay()
     {
         Debug.Log("Game Paused/Resumed");
-        if (isPaused) {
+        if (isPaused)
+        {
             ResumeGame();
             isPaused = false;
             Debug.Log("Paused:" + isPaused);
@@ -100,10 +104,4 @@ public class ButtonScript : MonoBehaviour
         }
     }
     
-    public void GoHome()
-    {
-        Debug.Log("Homebutton pressed");
-        SceneManager.LoadScene(0);
-        ResumeGame();
-    }
 }

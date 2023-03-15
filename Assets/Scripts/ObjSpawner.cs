@@ -108,4 +108,11 @@ public class ObjSpawner : MonoBehaviour
             }
         }
     }
+    
+    public void SetGameStateData(int newMergeCount, float spawnInterval)
+    {
+        this.mergeCount = newMergeCount;
+        this.spawnInterval = spawnInterval;
+    }
+
 }
