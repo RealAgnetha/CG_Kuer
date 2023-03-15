@@ -4,7 +4,9 @@ using TMPro;
 public class ObjSpawner : MonoBehaviour
 {
     public GameObject objPrefab;
-    public TextMeshProUGUI statusText;
+    public TextMeshProUGUI statusTMP;
+    public TextMeshProUGUI countDownTMP;
+
     public bool glitterIsActive = false;
     public bool speedIsIncreased = false;
 
@@ -14,6 +16,7 @@ public class ObjSpawner : MonoBehaviour
     private Vector2 spawnPosition;
     private int count = 0;
     public int mergeCount = 0;
+    private float spawnTimer; 
 
     void Start()
     {
@@ -21,12 +24,15 @@ public class ObjSpawner : MonoBehaviour
         InvokeRepeating("CheckOverlap", overlapCheckInterval, overlapCheckInterval);
 
         Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Objects"), LayerMask.NameToLayer("Objects"));
-        statusText.text = "Points: " + mergeCount;
+        statusTMP.text = "Points: " + mergeCount;
+        spawnTimer = spawnInterval - 2f;
     }
 
     void Update()
     {
-        statusText.text = "Points: " + mergeCount;
+        spawnTimer -= Time.deltaTime;
+        statusTMP.text = "Points: " + mergeCount;
+        countDownTMP.text = spawnTimer.ToString("0.0") + "s";
     }
 
     void SpawnObj()
@@ -37,14 +43,13 @@ public class ObjSpawner : MonoBehaviour
         instance.GetComponent<Mergeable>().SetLevel(0);
         instance.name = "Object " + count;
         count++;
-        
+
         if (glitterIsActive)
         {
             Debug.Log("Glitter active: " + glitterIsActive);
             instance.GetComponent<ParticleSystem>().Play();
         }
-
-
+        spawnTimer = spawnInterval; // reset spawn timer
     }
 
     public void ActivateGlitter(bool active)
@@ -52,7 +57,6 @@ public class ObjSpawner : MonoBehaviour
         Debug.Log("ActivateGlitter: " + active);
         glitterIsActive = active;
         mergeCount -= 1000;
-
     }
 
     public void IncreaseSpeed(bool active)
@@ -62,6 +66,7 @@ public class ObjSpawner : MonoBehaviour
         CancelInvoke("SpawnObj");
         InvokeRepeating("SpawnObj", 2f, spawnInterval);
         mergeCount -= 100;
+        spawnTimer = spawnInterval;
     }
 
     void CheckOverlap()

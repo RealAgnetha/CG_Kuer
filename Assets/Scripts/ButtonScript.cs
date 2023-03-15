@@ -17,7 +17,7 @@ public class ButtonScript : MonoBehaviour
 
     private void Update()
     {
-        if (button.name == "CloseBtn" || button.name == "HomeBtn" || button.name == "PauseBtn") 
+        if (button.name == "CloseBtn" || button.name == "HomeBtn" || button.name == "PauseBtn" || button.name == "Cart" ) 
         {
             button.interactable = true;
         }
