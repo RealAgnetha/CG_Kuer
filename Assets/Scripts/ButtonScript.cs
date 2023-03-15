@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ButtonScript : MonoBehaviour
 {
@@ -7,7 +8,8 @@ public class ButtonScript : MonoBehaviour
     public ObjSpawner objSpawner;
     public GameObject popupMenu;
     private Image bgImage;
-
+    private bool isPaused = false;
+    
     private void Start()
     {
         bgImage = popupMenu.GetComponent<Image>();
@@ -15,11 +17,11 @@ public class ButtonScript : MonoBehaviour
 
     private void Update()
     {
-        if (button.name == "CloseBtn")
+        if (button.name == "CloseBtn" || button.name == "HomeBtn" || button.name == "PauseBtn") 
         {
             button.interactable = true;
         }
-        else if (objSpawner.mergeCount >= 100) // Change the merge count condition to 1000
+        else if (objSpawner.mergeCount >= 100) 
         {
             button.interactable = true;
         }
@@ -58,5 +60,50 @@ public class ButtonScript : MonoBehaviour
     {
         Debug.Log("Closed on close button ");
         popupMenu.SetActive(false);
+    }
+
+    public void NextLevel()
+    {
+        Debug.Log("Next level started");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        ResumeGame();
+    }
+    
+    public void PreviousLevel()
+    {
+        Debug.Log("Next level started");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        ResumeGame();
+    }
+    
+    public void PauseGame()
+    {
+        Time.timeScale = 0;
+    }
+    public void ResumeGame()
+    {
+        Time.timeScale = 1;
+    }
+    public void PausePlay()
+    {
+        Debug.Log("Game Paused/Resumed");
+        if (isPaused) {
+            ResumeGame();
+            isPaused = false;
+            Debug.Log("Paused:" + isPaused);
+        }
+        else
+        {
+            PauseGame();
+            isPaused = true;
+            Debug.Log("Paused:" + isPaused);
+        }
+    }
+    
+    public void GoHome()
+    {
+        Debug.Log("Homebutton pressed");
+        SceneManager.LoadScene(0);
+        ResumeGame();
     }
 }
