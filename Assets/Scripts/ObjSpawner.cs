@@ -1,11 +1,13 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class ObjSpawner : MonoBehaviour
 {
     public GameObject objPrefab;
     public TextMeshProUGUI statusTMP;
     public TextMeshProUGUI countDownTMP;
+    public Button CartBtn;
 
     public bool glitterIsActive = false;
     public bool speedIsIncreased = false;
@@ -109,10 +111,11 @@ public class ObjSpawner : MonoBehaviour
         }
     }
     
-    public void SetGameStateData(int newMergeCount, float spawnInterval)
+    public void SetGameStateData(int newMergeCount, float newSpawnInterval)
     {
         this.mergeCount = newMergeCount;
-        this.spawnInterval = spawnInterval;
+        this.spawnInterval = newSpawnInterval;
     }
 
+   
 }
