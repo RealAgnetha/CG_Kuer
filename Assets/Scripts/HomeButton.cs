@@ -5,7 +5,7 @@ public class HomeButton : MonoBehaviour
 {
     public ObjSpawner spawner;
     public ButtonScript buttonScript;
-    
+
     void OnEnable()
     {
         if (PlayerPrefs.HasKey("mergeCount") && PlayerPrefs.HasKey("spawnInterval"))

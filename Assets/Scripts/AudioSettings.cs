@@ -7,8 +7,6 @@ public class AudioSettings : MonoBehaviour
     public AudioMixer audioMixer;
     
     private const string SoundEnabledKey = "SoundEnabled";
-
-   
     public void SoundOff()
     {
         audioSource.volume = 0;
