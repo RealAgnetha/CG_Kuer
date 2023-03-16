@@ -93,6 +93,12 @@ public class ObjSpawner : MonoBehaviour
                             (allObjects[i].transform.position.y + allObjects[j].transform.position.y) / 2);
                     GameObject newInstance = Instantiate(objPrefab, spawnPos, Quaternion.identity);
                     newInstance.GetComponent<Mergeable>().SetLevel(firstObjectLevel + 1);
+                    
+                    /*TEST*/
+                    BiggerOnMerge biggerOnMerge = newInstance.AddComponent<BiggerOnMerge>();
+                    biggerOnMerge.StartScaling();
+                    /**/
+                    
                     if (glitterIsActive)
                     {
                         Debug.Log("Glitter active: " + glitterIsActive);

@@ -11,16 +11,22 @@ public class MenuManager : MonoBehaviour
     public Button resumeBtn;
     public Button exitBtn;
     public TextMeshProUGUI currentlyPlayingTMP;
-    public AudioSource backgroundMusic;
-
+    
     void Update()
     {
-        if (backgroundMusic.isPlaying)
+        if (currentlyPlayingTMP != null && AudioListener.pause == false && AudioListener.volume != 0)
         {
-            currentlyPlayingTMP.text = backgroundMusic.clip.name;
+            AudioSource[] sources = FindObjectsOfType<AudioSource>();
+            foreach (AudioSource source in sources)
+            {
+                if (source.isPlaying)
+                {
+                    currentlyPlayingTMP.text = source.clip.name;
+                }
+            }
         }
     }
-    
+
     public void ResumeOldGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); 
