@@ -3,26 +3,22 @@ using UnityEngine.SceneManagement;
 
 public class HomeButton : MonoBehaviour
 {
-    // Reference to the game script that controls the game
     public ObjSpawner spawner;
-
+    public ButtonScript buttonScript;
+    
     void OnEnable()
     {
-        // Check if the game state data exists in PlayerPrefs
         if (PlayerPrefs.HasKey("mergeCount") && PlayerPrefs.HasKey("spawnInterval"))
         {
-            // Load the game state data
+            // Load and set the game state data
             int mergeCount = PlayerPrefs.GetInt("mergeCount");
             float spawnInterval = PlayerPrefs.GetFloat("spawnInterval");
-
-            // Set the game state data in the game script
             spawner.SetGameStateData(mergeCount, spawnInterval);
         }
     }
 
     void OnDisable()
     {
-        // Save the game state data when the script is disabled
         PlayerPrefs.SetInt("mergeCount", spawner.mergeCount);
         PlayerPrefs.SetFloat("spawnInterval", spawner.spawnInterval);
     }
@@ -30,12 +26,11 @@ public class HomeButton : MonoBehaviour
     public void GoHome()
     {
         Debug.Log("Home button pressed");
-
-        // Save the game state data
+        // Save the game state data before going to home screen
         PlayerPrefs.SetInt("mergeCount", spawner.mergeCount);
         PlayerPrefs.SetFloat("spawnInterval", spawner.spawnInterval);
 
-        // Load scene 0
         SceneManager.LoadScene(0);
+        buttonScript.ResumeGame();
     }
 }

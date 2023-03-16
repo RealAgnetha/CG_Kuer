@@ -80,11 +80,14 @@ public class ButtonScript : MonoBehaviour
     void PauseGame()
     {
         Time.timeScale = 0;
+        AudioListener.pause = true;
     }
 
-    void ResumeGame()
+    public void ResumeGame()
     {
         Time.timeScale = 1;
+        AudioListener.pause = false; 
+
     }
 
     public void PausePlay()
@@ -103,5 +106,4 @@ public class ButtonScript : MonoBehaviour
             Debug.Log("Paused:" + isPaused);
         }
     }
-    
 }
