@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: -4167051616875090555}
   - component: {fileID: -8009560863652451053}
   - component: {fileID: 1593400140112943894}
+  - component: {fileID: 5175208761730101266}
   m_Layer: 3
   m_Name: Level1Prefab
   m_TagString: Object
@@ -4988,3 +4989,17 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &5175208761730101266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4722775398941855901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f611e8f73fe248108892277f60bdcfe1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxScaleMultiplier: 1.1
+  scaleChangeDuration: 2

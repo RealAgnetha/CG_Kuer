@@ -1,11 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class BiggerOnMerge : MonoBehaviour
 {
-    public float maxScaleMultiplier = 1.1f;
-    public float scaleChangeDuration = 2f;
+    public float maxScaleMultiplier = 1.25f;
+    public float scaleChangeDuration = 1f;
     private float scaleChangeStartTime;
     private Vector3 initialScale;
 
@@ -16,19 +14,30 @@ public class BiggerOnMerge : MonoBehaviour
 
     private void Update()
     {
-        if (Time.time - scaleChangeStartTime < scaleChangeDuration)
+        float elapsedTime = Time.time - scaleChangeStartTime;
+
+        if (elapsedTime < scaleChangeDuration / 2)
         {
-            float timeRatio = (Time.time - scaleChangeStartTime) / scaleChangeDuration;
+            // Increasing phase
+            float timeRatio = elapsedTime / (scaleChangeDuration / 2);
             transform.localScale = initialScale * Mathf.Lerp(1f, maxScaleMultiplier, timeRatio);
+        }
+        else if (elapsedTime < scaleChangeDuration)
+        {
+            // Decreasing phase
+            float timeRatio = (elapsedTime - scaleChangeDuration / 2) / (scaleChangeDuration / 2);
+            transform.localScale = initialScale * Mathf.Lerp(maxScaleMultiplier, 1f, timeRatio);
         }
         else
         {
-            transform.localScale = initialScale * maxScaleMultiplier;
+            // Finished effect
+            transform.localScale = initialScale;
             Destroy(this);
         }
     }
 
-    public void StartScaling()
+
+    public void DoEffect()
     {
         scaleChangeStartTime = Time.time;
     }

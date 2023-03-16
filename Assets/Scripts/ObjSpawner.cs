@@ -94,10 +94,9 @@ public class ObjSpawner : MonoBehaviour
                     GameObject newInstance = Instantiate(objPrefab, spawnPos, Quaternion.identity);
                     newInstance.GetComponent<Mergeable>().SetLevel(firstObjectLevel + 1);
                     
-                    /*TEST*/
+                    /*visual effect when merged*/
                     BiggerOnMerge biggerOnMerge = newInstance.AddComponent<BiggerOnMerge>();
-                    biggerOnMerge.StartScaling();
-                    /**/
+                    biggerOnMerge.DoEffect();
                     
                     if (glitterIsActive)
                     {
