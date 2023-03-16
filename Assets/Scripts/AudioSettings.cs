@@ -1,9 +1,11 @@
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class AudioSettings : MonoBehaviour
 {
     public AudioSource audioSource;
-
+    public AudioMixer audioMixer;
+    
     private const string SoundEnabledKey = "SoundEnabled";
 
    
@@ -47,6 +49,12 @@ public class AudioSettings : MonoBehaviour
         }
         PlayerPrefs.SetInt(SoundEnabledKey, SoundEnabled ? 1 : 0);
 
+    }
+    
+    public void SetVolume(float volume)
+    {
+audioMixer.SetFloat("volume", Mathf.Log10(volume) * 20); 
+        Debug.Log(volume);
     }
 
 }
