@@ -106,7 +106,7 @@ public class ButtonScript : MonoBehaviour
         return objSpawner.mergeCount >= neededPoints;
     }
 
-    public void OnButtonClick()
+    public void OpenPopup()
     {
         popupMenu.SetActive(true);
     }

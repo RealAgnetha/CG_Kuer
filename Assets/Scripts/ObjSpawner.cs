@@ -17,7 +17,7 @@ public class ObjSpawner : MonoBehaviour
     private Vector2 spawnPosition;
     private int count = 0;
     public int mergeCount = 0;
-    private float spawnTimer; 
+    private float spawnTimer;
 
     void Start()
     {
@@ -50,6 +50,7 @@ public class ObjSpawner : MonoBehaviour
             Debug.Log("Glitter active: " + glitterIsActive);
             instance.GetComponent<ParticleSystem>().Play();
         }
+
         spawnTimer = spawnInterval; // reset spawn timer
     }
 
@@ -92,11 +93,11 @@ public class ObjSpawner : MonoBehaviour
                             (allObjects[i].transform.position.y + allObjects[j].transform.position.y) / 2);
                     GameObject newInstance = Instantiate(objPrefab, spawnPos, Quaternion.identity);
                     newInstance.GetComponent<Mergeable>().SetLevel(firstObjectLevel + 1);
-                    
+
                     /*visual effect when merged*/
                     BiggerOnMerge biggerOnMerge = newInstance.AddComponent<BiggerOnMerge>();
                     biggerOnMerge.DoEffect();
-                    
+
                     if (glitterIsActive)
                     {
                         Debug.Log("Glitter active: " + glitterIsActive);
@@ -120,6 +121,4 @@ public class ObjSpawner : MonoBehaviour
         this.mergeCount = newMergeCount;
         this.spawnInterval = newSpawnInterval;
     }
-
-   
 }

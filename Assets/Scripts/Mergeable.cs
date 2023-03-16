@@ -5,8 +5,9 @@ using UnityEngine;
 
 public class Mergeable : MonoBehaviour
 {
+
     public int Level { get; private set; }
-    [SerializeField] private List<Sprite> levelSprites;
+    [SerializeField] public List<Sprite> levelSprites;
 
     public void SetLevel(int level)
     {
