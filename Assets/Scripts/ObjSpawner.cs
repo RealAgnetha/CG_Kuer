@@ -7,7 +7,6 @@ public class ObjSpawner : MonoBehaviour
     public GameObject objPrefab;
     public TextMeshProUGUI statusTMP;
     public TextMeshProUGUI countDownTMP;
-    public Button CartBtn;
 
     public bool glitterIsActive = false;
     public bool speedIsIncreased = false;
@@ -64,7 +63,7 @@ public class ObjSpawner : MonoBehaviour
     public void IncreaseSpeed(bool active)
     {
         Debug.Log("Speed increased: " + active);
-        spawnInterval /= 2.0f;
+        spawnInterval -= 1.0f;
         CancelInvoke("SpawnObj");
         InvokeRepeating("SpawnObj", 2f, spawnInterval);
         mergeCount -= 100;

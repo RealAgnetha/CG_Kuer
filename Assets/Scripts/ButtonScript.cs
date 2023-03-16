@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -9,6 +10,7 @@ public class ButtonScript : MonoBehaviour
     public GameObject popupMenu;
     private Image bgImage;
     private bool isPaused = false;
+    int speedButtonClickCount = 0;
 
     private void Start()
     {
@@ -17,22 +19,41 @@ public class ButtonScript : MonoBehaviour
 
     private void Update()
     {
-        if (button.name == "CloseBtn" || button.name == "HomeBtn" || button.name == "PauseBtn" || button.name == "AudioBtn")
+        if (button.name == "SellBtn")
         {
-            button.interactable = true;
-        }
-        else if (objSpawner.mergeCount >= 100)
-        {
-            button.interactable = true;
-        }
-        else
-        {
-            button.interactable = false;
+            if (objSpawner.mergeCount < 100)
+            {
+                button.interactable = false;
+            }
+            else
+            {
+                button.interactable = true;
+            }
         }
 
-        if (button.name == "GlitterBtn" && objSpawner.mergeCount < 1000)
+        if (button.name == "GlitterBtn")
         {
-            button.interactable = false;
+            if (objSpawner.mergeCount < 1000)
+            {
+                button.interactable = false;
+            }
+            else
+            {
+                button.interactable = true;
+            }
+        }
+
+        if (button.name == "SpeedBtn")
+        {
+            TMP_Text speedAmount = GameObject.Find("SpeedAmount").GetComponent<TMP_Text>();
+            if (objSpawner.mergeCount < (int.Parse(speedAmount.text)))
+            {
+                button.interactable = false;
+            }
+            else
+            {
+                button.interactable = true;
+            }
         }
     }
 
@@ -44,12 +65,45 @@ public class ButtonScript : MonoBehaviour
         button.GetComponent<Image>().color = Color.gray;
     }
 
+
     public void IncreaseSpeed()
     {
         Debug.Log("increase speed");
-        objSpawner.IncreaseSpeed(true);
-        button.interactable = false;
-        button.GetComponent<Image>().color = Color.gray;
+        TMP_Text speedLabel = GameObject.Find("SpeedLabel").GetComponent<TMP_Text>();
+        TMP_Text speedAmount = GameObject.Find("SpeedAmount").GetComponent<TMP_Text>();
+
+        if (CheckSufficientPoints(int.Parse(speedAmount.text)))
+        {
+            speedButtonClickCount++;
+            if (speedButtonClickCount == 3)
+            {
+                button.interactable = false;
+                button.GetComponent<Image>().color = Color.gray;
+                speedLabel.text = "Increase Speed";
+                speedAmount.text = "0";
+                speedAmount.enabled = false;
+            }
+
+            if (speedButtonClickCount <= 2)
+            {
+                button.interactable = true;
+                objSpawner.IncreaseSpeed(true);
+                speedLabel.text = "Increase Speed " + (speedButtonClickCount + 1).ToString();
+                int newAmount = ((speedButtonClickCount + 1) * 100);
+                speedAmount.text = newAmount.ToString();
+                objSpawner.mergeCount -=
+                    ((speedButtonClickCount - 1) * 100); // subtract 100 from mergeCount for each speed increase
+            }
+        }
+        else
+        {
+            button.interactable = false;
+        }
+    }
+
+    private bool CheckSufficientPoints(int neededPoints)
+    {
+        return objSpawner.mergeCount >= neededPoints;
     }
 
     public void OnButtonClick()
@@ -86,8 +140,7 @@ public class ButtonScript : MonoBehaviour
     public void ResumeGame()
     {
         Time.timeScale = 1;
-        AudioListener.pause = false; 
-
+        AudioListener.pause = false;
     }
 
     public void PausePlay()
