@@ -13,6 +13,8 @@ public class HomeButton : MonoBehaviour
             // Load and set the game state data
             int mergeCount = PlayerPrefs.GetInt("mergeCount");
             float spawnInterval = PlayerPrefs.GetFloat("spawnInterval");
+            bool glitterIsActive = PlayerPrefs.GetInt("glitterIsActive") == 1 ? true : false;
+            spawner.glitterIsActive = glitterIsActive;
             spawner.SetGameStateData(mergeCount, spawnInterval);
         }
     }
@@ -21,6 +23,7 @@ public class HomeButton : MonoBehaviour
     {
         PlayerPrefs.SetInt("mergeCount", spawner.mergeCount);
         PlayerPrefs.SetFloat("spawnInterval", spawner.spawnInterval);
+        PlayerPrefs.SetInt("glitterIsActive", spawner.glitterIsActive ? 1 : 0);
     }
 
     public void GoHome()
