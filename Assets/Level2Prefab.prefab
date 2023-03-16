@@ -152,11 +152,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelSprites:
-  - {fileID: 21300000, guid: c7aa62ae78ffca0498c89e5f45f94c0e, type: 3}
-  - {fileID: 21300000, guid: 55ad4b6109677be42b239f450ce98c29, type: 3}
-  - {fileID: 21300000, guid: 66fa19194577350438c952106f661c2f, type: 3}
-  - {fileID: 21300000, guid: 78040fcc3a5ca0646b20e131d68b3660, type: 3}
-  - {fileID: 21300000, guid: 6a6c98a6079537844ab0f7b2b45425b3, type: 3}
+  - {fileID: 21300000, guid: a34a8f8870f46c04dbe86c7ed173ba1f, type: 3}
+  - {fileID: 21300000, guid: 87850260d0f08224e887e1c55590c081, type: 3}
+  - {fileID: 21300000, guid: d2c0dc76eca05bb4eb4f3fc4a37f258d, type: 3}
+  - {fileID: 21300000, guid: ec3f5c9d06947e7458e9626551938feb, type: 3}
+  - {fileID: 21300000, guid: 6b3b8ef492edc304f9230dc368e8af5c, type: 3}
+  - {fileID: 21300000, guid: f30c689e1cd8caa45a28c4947f382374, type: 3}
+  - {fileID: 21300000, guid: 1c84373cf4be81c44b97ce70ed9d78e6, type: 3}
 --- !u!198 &6975057628899806058
 ParticleSystem:
   m_ObjectHideFlags: 0

@@ -77,12 +77,12 @@ public class ButtonScript : MonoBehaviour
         ResumeGame();
     }
 
-    public void PauseGame()
+    void PauseGame()
     {
         Time.timeScale = 0;
     }
 
-    public void ResumeGame()
+    void ResumeGame()
     {
         Time.timeScale = 1;
     }
