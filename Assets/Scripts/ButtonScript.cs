@@ -150,12 +150,16 @@ public class ButtonScript : MonoBehaviour
         {
             ResumeGame();
             isPaused = false;
+            TMP_Text tmp = GameObject.Find("PauseBtn/Text").GetComponent<TMP_Text>();
+            tmp.text = "ll";
             Debug.Log("Paused:" + isPaused);
         }
         else
         {
             PauseGame();
             isPaused = true;
+            TMP_Text tmp = GameObject.Find("PauseBtn/Text").GetComponent<TMP_Text>();
+            tmp.text = ">";
             Debug.Log("Paused:" + isPaused);
         }
     }
