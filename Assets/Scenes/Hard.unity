@@ -567,6 +567,7 @@ GameObject:
   - component: {fileID: 220751766}
   - component: {fileID: 220751765}
   - component: {fileID: 220751764}
+  - component: {fileID: 220751768}
   m_Layer: 5
   m_Name: PreviousLevelBtn
   m_TagString: Untagged
@@ -703,6 +704,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 220751762}
   m_CullTransparentMesh: 1
+--- !u!114 &220751768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 220751762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c45f8f0df730f4c4bb68fcd24befd1bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverScale: 1.2
 --- !u!1 &264979811
 GameObject:
   m_ObjectHideFlags: 0
@@ -7308,6 +7322,7 @@ GameObject:
   - component: {fileID: 843631428}
   - component: {fileID: 843631427}
   - component: {fileID: 843631426}
+  - component: {fileID: 843631430}
   m_Layer: 5
   m_Name: HomeBtn
   m_TagString: Untagged
@@ -7443,6 +7458,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 843631424}
   m_CullTransparentMesh: 1
+--- !u!114 &843631430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 843631424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c45f8f0df730f4c4bb68fcd24befd1bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverScale: 1.2
 --- !u!1 &894948819
 GameObject:
   m_ObjectHideFlags: 0
@@ -8388,6 +8416,7 @@ GameObject:
   - component: {fileID: 1232585239}
   - component: {fileID: 1232585238}
   - component: {fileID: 1232585237}
+  - component: {fileID: 1232585242}
   m_Layer: 5
   m_Name: PauseBtn
   m_TagString: Untagged
@@ -8524,6 +8553,19 @@ RectTransform:
   m_AnchoredPosition: {x: -280, y: -760}
   m_SizeDelta: {x: 50, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1232585242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1232585236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c45f8f0df730f4c4bb68fcd24befd1bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverScale: 1.2
 --- !u!1 &1255666014
 GameObject:
   m_ObjectHideFlags: 0
@@ -8671,6 +8713,7 @@ GameObject:
   - component: {fileID: 1278640892}
   - component: {fileID: 1278640891}
   - component: {fileID: 1278640890}
+  - component: {fileID: 1278640894}
   m_Layer: 5
   m_Name: SellBtn
   m_TagString: Untagged
@@ -8807,6 +8850,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1278640888}
   m_CullTransparentMesh: 1
+--- !u!114 &1278640894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1278640888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c45f8f0df730f4c4bb68fcd24befd1bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverScale: 1.2
 --- !u!1 &1287718780
 GameObject:
   m_ObjectHideFlags: 0
@@ -9776,6 +9832,7 @@ GameObject:
   - component: {fileID: 1735850838}
   - component: {fileID: 1735850837}
   - component: {fileID: 1735850836}
+  - component: {fileID: 1735850840}
   m_Layer: 5
   m_Name: AudioBtn
   m_TagString: Untagged
@@ -9912,6 +9969,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1735850834}
   m_CullTransparentMesh: 1
+--- !u!114 &1735850840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1735850834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c45f8f0df730f4c4bb68fcd24befd1bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverScale: 1.2
 --- !u!1 &1781893306
 GameObject:
   m_ObjectHideFlags: 0

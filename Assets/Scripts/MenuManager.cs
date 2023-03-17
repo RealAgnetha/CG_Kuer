@@ -3,7 +3,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-
 public class MenuManager : MonoBehaviour
 {
     public GameObject audioSettings;
@@ -46,6 +45,7 @@ public class MenuManager : MonoBehaviour
         resumeBtn.interactable = false;
         exitBtn.interactable = false;
     }
+    
     public void CloseAudio()
     {
         startNewBtn.interactable = true;
