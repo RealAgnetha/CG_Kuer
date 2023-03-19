@@ -3,8 +3,12 @@
 ## About the game
 
 This untitled game was created for the class "Computergrafik" at HTW Berlin. I wanted to make a mobile game, so I developed it using the proportions of my own phone - a Moto G8 Power.
+
 Its a 2D merging game featuring 3 levels with increasing difficulty, a small shop and a soundtrack. 
-Objects spawn and fall down top to bottom and land at random positions. They can then be dragged around the screen. When players drag objects of the same kind and they overlap by more than 50%, they "merge" and create a new object. For each merge, the player is rewarded with points increasing with each new object level (e.g. 10 points for merging two objects of object level 1, 100 points for merging two objects of object level 2). When the player earned 100 points, the shop gets enabled, where they can buy an increase in speed for 100 points. There are three increases available, each costing 100 points more than their predecessor. Also available in the shop is a glitter effect for 1000 points which adds glittering particles to each objects.
+Objects spawn and fall down top to bottom and land at random positions. They can then be dragged around the screen. When players drag objects of the same kind and they overlap by more than 50%, they "merge" and create a new object. For each merge, the player is rewarded with points increasing with each new object level (e.g. 10 points for merging two objects of object level 1, 100 points for merging two objects of object level 2). 
+
+When the player earned 100 points, the shop gets enabled, where they can buy an increase in speed for 100 points. There are three increases available, each costing 100 points more than their predecessor. Also available in the shop is a glitter effect for 1000 points which adds glittering particles to each objects.
+
 
 ## Guides and tutorials 
 
