@@ -52,5 +52,6 @@ It was also the first time I actively used PlayerPrefs: https://docs.unity3d.com
 The game uses 2D assets from the free 2D Mega Pack by the creator Brackeys available on the Unity Asset Store: https://assetstore.unity.com/packages/2d/free-2d-mega-pack-177430. This pack includes a variety of sprites and animations of which I used a few to create the sprites of the mergeable objects.
 
 ### Music
-https://open.spotify.com/track/4MVk79dmYqi7HQs0bMgboy?si=e9ffb2729df34486
+
+The song I used is not included in this repository for copyright reasons, but if you want to listen to a nice relaxing song that won't get on your nerve when you have to listen to it on repeat, check out: https://open.spotify.com/track/4MVk79dmYqi7HQs0bMgboy?si=e9ffb2729df34486
 
