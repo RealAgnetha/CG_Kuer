@@ -8,6 +8,7 @@ public class TextScroller : MonoBehaviour
     private void Start()
     {
         rectTransform = GetComponent<RectTransform>();
+        rectTransform.position = new Vector3(-(2*rectTransform.rect.width), rectTransform.position.y, rectTransform.position.z);
     }
 
     void Update()
